@@ -88,7 +88,7 @@ public function verifyOtp(Request $request)
             if (! $user || ! Hash::check($request->password, $user->password)){
                 return $this->error('The provided credentials are not correct');
            }
-           $token= $user->createToken("Recruitment")->plainTextToken;
+           $token= $user->createToken("ArticleLms")->plainTextToken;
            return $this->success([
             'user' => $user->refresh(),
             'token' =>$token
