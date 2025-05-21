@@ -35,9 +35,12 @@ class UserRegistrationNotice extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->subject("Welcome")
+        ->line('Welcome to '.env('APP_NAME').'. create your account now')
+        ->line('Your application otp code is '.$notifiable->otp)
+        ->line('Or click the button below to create your account')
+        //->action('Create Account', config('app.url') . 'otp/' . base64_encode($notifiable) .'/?verify=' . base64_encode($notifiable->otp))
+        ->line('Thank you for choosing to be part of us.');
     }
 
     /**

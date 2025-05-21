@@ -38,8 +38,7 @@ public function register(Request $request)
         $user->save();
 
         $user->sendOtp($user->otp);
-        $user->notify(new UserRegistrationNotice());
-
+        //$user->notify(new UserRegistrationNotice());
         return $this->success($user->refresh());
     } catch (\Exception $exception) {
         Log::error('Error on Registration', ['error' => $exception->getMessage()]);
