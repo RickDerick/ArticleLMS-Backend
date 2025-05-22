@@ -3,6 +3,7 @@
     use App\Http\Controllers\User\UserController;
     use App\Http\Controllers\Article\ArticleController;
 
+
     Route::middleware(['auth:sanctum', 'admin'])->group(function () {
         Route::get('/users', [UserController::class, 'index']);
         Route::get('/users/{id}', [UserController::class, 'show']);
@@ -13,4 +14,4 @@
         Route::delete('/articles/{id}', [ArticleController::class, 'destroy']);
     });
 
-?>
+// ?>

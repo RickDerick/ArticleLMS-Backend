@@ -24,5 +24,6 @@ Route::group(['prefix' => 'v1'], function (){
     Route::prefix('article')->group(base_path('routes/modules/article.php'));
     Route::prefix('reservation')->group(base_path('routes/modules/reservation.php'));
     Route::prefix('admin')->group(base_path('routes/modules/admin.php'));
+     Route::prefix('categories')->group(base_path('routes/modules/categories.php'));
 });
 
