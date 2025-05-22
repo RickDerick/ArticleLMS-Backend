@@ -21,5 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function (){
     Route::prefix('auth')->group(base_path('routes/modules/auth.php'));
     Route::prefix('user')->group(base_path('routes/modules/user.php'));
+    Route::prefix('article')->group(base_path('routes/modules/article.php'));
+    Route::prefix('reservation')->group(base_path('routes/modules/reservation.php'));
+    Route::prefix('admin')->group(base_path('routes/modules/admin.php'));
 });
 
